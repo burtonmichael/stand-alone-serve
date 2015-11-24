@@ -1,0 +1,146 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	padding-bottom: 3rem;
+}
+
+body.iframe-window-open {
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 28rem;
+}
+
+iframe {
+	display: block;
+	width: 100%;
+}
+
+hr {
+	border-color: #f7f7f9;
+	border-top-width: .2rem;
+}
+
+form {
+    background: #F7F7F9;
+    padding: 2rem;
+}
+
+fieldset {
+	margin-bottom: 0;
+}
+
+form {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+	border-color: #fff;
+	border-radius: 0;
+}
+
+.iframe {
+    overflow: hidden;
+	background-color: #fff;
+    margin-bottom: 3rem;
+}
+
+.iframe-window {
+    z-index: 101;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: hidden;
+    background: #f7f7f9;
+    height: 4rem;
+    -webkit-transition: height .4s;
+    -o-transition: height .4s;
+    transition: height .4s;
+}
+
+.iframe-scroll {
+    height: 26rem;
+    overflow-y: scroll;
+}
+
+.iframe-window-open .iframe-window {
+    height: 30rem;
+}
+
+.iframe-standard {
+	padding: .8rem;
+}
+
+.window-toggle {
+	cursor: pointer;
+	height: 4rem;
+	text-align: center;
+    padding: .8rem 0;
+}
+
+.window-toggle span {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    -webkit-transition: transform .5s;
+    -moz-transition: transform .5s;
+    -ms-transition: transform .5s;
+    -o-transition: transform .5s;
+    transition: transform .5s;
+}
+
+.window-toggle .toggle-arrow {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+}
+
+.window-toggle .toggle-text {
+    line-height: 1rem;
+    font-size: .6rem;
+}
+
+.iframe-window-open .toggle-arrow {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+
+
+
+.form-info-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2.4rem;
+    line-height: 2.4rem;
+    text-align: center;
+    color: #fff;
+    font-size: 1.1rem;
+    background-color: #5bc0de;
+    font-weight: 900;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.form-info-button:hover + .form-content .form-info {
+    transform: scaleY(1);
+}
+
+.form-with-info {
+    position: relative;
+}
+
+.form-info {
+    z-index: 99;
+    transform-origin: 50% 0;
+    transform: scaleY(0);
+    transition: transform .5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.form-info img {
+    max-width: 100%;
+}

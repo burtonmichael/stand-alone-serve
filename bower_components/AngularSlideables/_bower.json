@@ -1,0 +1,14 @@
+{
+  "name": "AngularSlideables",
+  "homepage": "https://github.com/EricWVGG/AngularSlideables",
+  "_release": "66f521221f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "66f521221f9696e35b745f743960361230066f41"
+  },
+  "_source": "git://github.com/EricWVGG/AngularSlideables.git",
+  "_target": "*",
+  "_originalSource": "AngularSlideables",
+  "_direct": true
+}

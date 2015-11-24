@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="serve">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Self serve</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-colorpicker/css/colorpicker.min.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body ng-controller="MainCtrl" ng-class="{'iframe-window-open': windowOpen}">
+    <nav class="navbar navbar-dark bg-primary navbar-static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Stand-alone setup</a>
+            <ul class="nav navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-2">Rentalcars.com - Search box</h1>
+            <p class="lead">Voluptate aspernatur nulla ducimus, aliquid eos porro explicabo, ab cum fugit odio inventore. Enim eius, voluptatibus cupiditate repudiandae quos!</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row m-b-lg">
+            <div class="col-md-12">
+                <h1 class="display-1">Layout</h1>
+                <p class="lead">Base properties</p>
+                <form class="part">
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" ng-model="parameters.template" value="standard">Search panel
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" ng-model="parameters.template" value="universal">Extended
+                    </label>
+                </form>
+            </div>
+        </div>
+        <div class="row m-b-lg">
+            <div class="col-md-12">
+                <h1 class="display-1">Global properties</h1>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="form-with-info">
+                    <div class="form-info-button">i</div>
+                    <div class="form-content">
+                        <form>
+                            <h5>Primary color</h5>
+                            <p class="text-muted"><small>Description</small></p>
+                            <fieldset>
+                                <input class="form-control" colorpicker ng-model="parameters.primary" ng-model-options="{ debounce: 1000 }" placeholder="primary">
+                            </fieldset>
+                        </form>
+                        <div class="form-info">
+                            <img src="https://s3.amazonaws.com/muzli_ad_service/090151e06c02531c97e2cd8d0716eb1b.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <h5>Primary text color</h5>
+                    <p class="text-muted"><small>Description</small></p>
+                    <fieldset>
+                        <input class="form-control" colorpicker ng-model="parameters.primaryText" ng-model-options="{ debounce: 1000 }" placeholder="primary">
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <fieldset>
+                        <h5>Border radius</h5>
+                        <p class="text-muted"><small>Description</small></p>
+                        <input class="form-control" ng-model="parameters.radius" ng-model-options="{ debounce: 1000 }" placeholder="radius">
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <fieldset>
+                        <h5>Text color</h5>
+                        <p class="text-muted"><small>Description</small></p>
+                        <input class="form-control" ng-model="parameters.text" ng-model-options="{ debounce: 1000 }" placeholder="text">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="row m-b-lg">
+            <div class="col-md-12">
+                <h1 class="display-1">Additional properties</h1>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <fieldset>
+                        <h5>Hide header</h5>
+                        <p class="text-muted"><small>Description</small></p>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="parameters.hideHeader" ng-model-options="{ debounce: 1000 }"> Enabled
+                            </label>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <fieldset>
+                        <h5>Button radius</h5>
+                        <p class="text-muted"><small>Description</small></p>
+                        <input class="form-control" ng-model="parameters.buttonRadius" ng-model-options="{ debounce: 1000 }" placeholder="button-radius">
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <fieldset>
+                        <h5>Large button</h5>
+                        <p class="text-muted"><small>Description</small></p>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="parameters.buttonSize" ng-true-value="'large'" ng-model-options="{ debounce: 1000 }"> Enabled
+                            </label>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <!-- UNIVERSAL -->
+        <div class="row m-b-lg" ng-show="parameters.template === 'universal'">
+            <div class="col-md-12">
+                <h1 class="display-1">Extended properties</h1>
+                <p class="lead">Base properties</p>
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <fieldset>
+                        <h5>Hollow form</h5>
+                        <p class="text-muted"><small>Description</small></p>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="parameters.formHollow" ng-model-options="{ debounce: 1000 }"> Enabled
+                            </label>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <fieldset>
+                        <h5>Form background</h5>
+                        <p class="text-muted"><small>Description</small></p>
+                        <input class="form-control" ng-model="parameters.formBg" ng-model-options="{ debounce: 1000 }" placeholder="button-radius">
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <fieldset>
+                        <h5>Form text</h5>
+                        <p class="text-muted"><small>Description</small></p>
+                        <input class="form-control" ng-model="parameters.formText" ng-model-options="{ debounce: 1000 }" placeholder="button-radius">
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <fieldset>
+                        <h5>Hide modules</h5>
+                        <p class="text-muted"><small>Description</small></p>
+                        <select ng-change="console.log(parameters.hideModules)" ng-model="parameters.hideModules" ng-model-options="{ debounce: 1000 }" multiple="" class="form-control" id="exampleSelect2">
+                            <option value="hero">Hero</option>
+                            <option value="cars">Cars</option>
+                            <option value="suppliers">Suppliers</option>
+                            <option value="manage">Manage</option>
+                            <option value="why">Why book</option>
+                            <option value="powered">Powered by</option>
+                        </select>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="iframe-window">
+        <div class="window-toggle" ng-click="toggleWindow()">
+            <span class="toggle-arrow">{{arrow}}</span>
+            <span class="toggle-text">Preview</span>
+        </div>
+        <div class="iframe-scroll">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="iframe" ng-class="'iframe-' + parameters.template">
+                            <iframe id="rc-connect-iframe" ng-src="{{iframe}}" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    function receiveMessage(evt) {
+        if (evt.origin === 'http://www.rentalcars.com' || evt.origin === 'https://secure.rentalcars.com' || evt.origin === 'https://secure.rentalcarsconnect.com' || evt.origin === "http://10.171.38.27:3030") {
+            if (typeof evt.data === "string")
+                document.getElementById('rc-connect-iframe').height = evt.data;
+        }
+    }
+
+    if (window.addEventListener) {
+        window.addEventListener('message', receiveMessage, false);
+    } else {
+        window.attachEvent('onmessage', receiveMessage);
+    }
+    </script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
